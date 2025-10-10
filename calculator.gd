@@ -1,6 +1,6 @@
 extends Control
 
-@onready var label_result = $VBoxContainer/labelResult
+@onready var label_result = $MarginContainer/VBoxContainer/VBoxContainer/labelResult
 var status = true
 
 
@@ -18,7 +18,7 @@ func ubah_label(angka: int):
 		if label_result.text == "0":
 			label_result.text = str(angka)
 		
-		elif label_result.text.length() > 12:
+		elif label_result.text.length() > 11:
 			pass
 			
 		else:

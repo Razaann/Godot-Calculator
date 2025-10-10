@@ -98,7 +98,7 @@ grow_vertical = 2
 script = ExtResource("1_2r0k0")
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -106,13 +106,23 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -180.0
-offset_top = -448.0
+offset_top = -550.0
 offset_right = 180.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="labelResult" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="labelResult" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_kvxsv")
@@ -121,20 +131,17 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
+size_flags_vertical = 8
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 4
 
-[node name="buttonClear" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="buttonClear" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -145,7 +152,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_y3ig0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_q6a5a")
 text = "c"
 
-[node name="buttonPoint" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="buttonPoint" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -156,7 +163,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_y3ig0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_q6a5a")
 text = "."
 
-[node name="buttonBackspace" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="buttonBackspace" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -167,7 +174,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_y3ig0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_q6a5a")
 text = "<-"
 
-[node name="buttonDivide" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="buttonDivide" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -178,7 +185,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_n4jj3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r82mk")
 text = "/"
 
-[node name="button7" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="button7" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -189,7 +196,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "7"
 
-[node name="button8" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="button8" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -200,7 +207,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "8"
 
-[node name="button9" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="button9" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -211,7 +218,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "9"
 
-[node name="buttonTimes" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="buttonTimes" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -222,7 +229,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_n4jj3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r82mk")
 text = "x"
 
-[node name="button4" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="button4" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -233,7 +240,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "4"
 
-[node name="button5" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="button5" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -244,7 +251,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "5"
 
-[node name="button6" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="button6" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -255,7 +262,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "6"
 
-[node name="buttonMinus" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="buttonMinus" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -266,7 +273,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_n4jj3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r82mk")
 text = "-"
 
-[node name="button1" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="button1" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -277,7 +284,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "1"
 
-[node name="button2" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="button2" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -288,7 +295,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "2"
 
-[node name="button3" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="button3" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -299,7 +306,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "3"
 
-[node name="buttonPlus" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="buttonPlus" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 focus_mode = 0
@@ -310,7 +317,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_n4jj3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r82mk")
 text = "+"
 
-[node name="buttonGame" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+[node name="buttonGame" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer"]
 visible = false
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -322,8 +329,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "?"
 
-[node name="button0" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="button0" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(168, 80)
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_kvxsv")
@@ -333,8 +344,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
 text = "0"
 
-[node name="buttonEquals" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
+[node name="buttonEquals" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(168, 80)
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_kvxsv")
@@ -344,15 +355,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_thh8o")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dq2vg")
 text = "="
 
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/buttonClear" to="." method="_on_button_clear_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/buttonBackspace" to="." method="_on_button_backspace_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button7" to="." method="_on_button_7_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button8" to="." method="_on_button_8_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button9" to="." method="_on_button_9_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button6" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button0" to="." method="_on_button_0_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/buttonClear" to="." method="_on_button_clear_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/buttonBackspace" to="." method="_on_button_backspace_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/GridContainer/button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer/button0" to="." method="_on_button_0_pressed"]
