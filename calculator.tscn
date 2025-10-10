@@ -1,0 +1,358 @@
+[gd_scene load_steps=15 format=3 uid="uid://bo6fdahkgi6s"]
+
+[ext_resource type="Script" uid="uid://bmorl4y6pbv7s" path="res://calculator.gd" id="1_2r0k0"]
+[ext_resource type="FontFile" uid="uid://oj73hiyfcrjb" path="res://ProductSans-Bold.ttf" id="1_kvxsv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahbq0"]
+bg_color = Color(0.23921569, 0.23921569, 0.23921569, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3ig0"]
+bg_color = Color(0.18431373, 0.18431373, 0.18431373, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6a5a"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8we2h"]
+bg_color = Color(1, 0.58431375, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4jj3"]
+bg_color = Color(0.8, 0.46666667, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r82mk"]
+bg_color = Color(1, 0.654902, 0.2, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mmrn"]
+bg_color = Color(0.17254902, 0.17254902, 0.17254902, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fkud"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckswu"]
+bg_color = Color(0.22745098, 0.22745098, 0.22745098, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cucun"]
+bg_color = Color(1, 0.58431375, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thh8o"]
+bg_color = Color(0.8, 0.46666667, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq2vg"]
+bg_color = Color(1, 0.654902, 0.2, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="Calculator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2r0k0")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -448.0
+offset_right = 180.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="labelResult" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4
+
+[node name="buttonClear" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_ahbq0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y3ig0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6a5a")
+text = "c"
+
+[node name="buttonPoint" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_ahbq0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y3ig0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6a5a")
+text = "."
+
+[node name="buttonBackspace" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_ahbq0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y3ig0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6a5a")
+text = "<-"
+
+[node name="buttonDivide" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_8we2h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n4jj3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r82mk")
+text = "/"
+
+[node name="button7" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "7"
+
+[node name="button8" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "8"
+
+[node name="button9" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "9"
+
+[node name="buttonTimes" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_8we2h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n4jj3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r82mk")
+text = "x"
+
+[node name="button4" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "4"
+
+[node name="button5" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "5"
+
+[node name="button6" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "6"
+
+[node name="buttonMinus" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_8we2h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n4jj3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r82mk")
+text = "-"
+
+[node name="button1" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "1"
+
+[node name="button2" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "2"
+
+[node name="button3" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "3"
+
+[node name="buttonPlus" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_8we2h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n4jj3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r82mk")
+text = "+"
+
+[node name="buttonGame" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "?"
+
+[node name="button0" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mmrn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2fkud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ckswu")
+text = "0"
+
+[node name="buttonEquals" type="Button" parent="VBoxContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_kvxsv")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_cucun")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_thh8o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dq2vg")
+text = "="
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/buttonClear" to="." method="_on_button_clear_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/buttonBackspace" to="." method="_on_button_backspace_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/GridContainer/button0" to="." method="_on_button_0_pressed"]
