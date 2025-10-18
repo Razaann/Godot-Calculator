@@ -8,7 +8,7 @@ var operator: String = ""
 var prevValue: float
 
 
-func ubah_label(angka: String):
+func change_label(angka: String):
 	if status == false:
 		if label_result.text == "0":
 			label_result.text = str(angka)
@@ -24,43 +24,43 @@ func ubah_label(angka: String):
 		status = false
 
 func _on_button_9_pressed():
-	ubah_label("9")
+	change_label("9")
 
 
 func _on_button_8_pressed():
-	ubah_label("8")
+	change_label("8")
 
 
 func _on_button_7_pressed():
-	ubah_label("7")
+	change_label("7")
 
 
 func _on_button_6_pressed():
-	ubah_label("6")
+	change_label("6")
 
 
 func _on_button_5_pressed():
-	ubah_label("5")
+	change_label("5")
 
 
 func _on_button_4_pressed():
-	ubah_label("4")
+	change_label("4")
 
 
 func _on_button_3_pressed():
-	ubah_label("3")
+	change_label("3")
 
 
 func _on_button_2_pressed():
-	ubah_label("2")
+	change_label("2")
 
 
 func _on_button_1_pressed():
-	ubah_label("1")
+	change_label("1")
 
 
 func _on_button_0_pressed():
-	ubah_label("0")
+	change_label("0")
 
 
 func _on_button_clear_pressed():
@@ -78,7 +78,7 @@ func _on_button_backspace_pressed():
 
 func _on_button_point_pressed():
 	if label_result.text != "0" and not label_result.text.contains("."):
-		ubah_label(".")
+		change_label(".")
 
 
 func _on_button_equals_pressed():
